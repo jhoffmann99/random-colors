@@ -71,7 +71,7 @@ const initPopup = () => {
   }
   const numberOfBoxes = localStorage.getItem('number-of-boxes');
   if (numberOfBoxes) {
-    document.querySelector('#js-number-of-checkboxes').value =
+    document.querySelector('#js-number-of-boxes').value =
       Number(numberOfBoxes);
   }
 };
@@ -125,7 +125,7 @@ const initBoxes = () => {
 
 const initNumberOfBoxesListener = () => {
   document
-    .querySelector('#js-number-of-checkboxes')
+    .querySelector('#js-number-of-boxes')
     .addEventListener('change', (e) => {
       localStorage.setItem('number-of-boxes', e.target.value);
       initBoxes();
