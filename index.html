@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Colors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page"></div>
+
+    <div class="popup">
+        <div class="popup-content">
+            <h1>Random Colors</h1>
+            <p>This simple and easy to use tool helps finding some random colors that match together.</p>
+            <section>
+                <h2>Features</h2>
+                <ul>
+                    <li>Press SPACE to spin the color wheel</li>
+                    <li>Click on a box to toggle the color lock. Locked colors are annotated with a solid red border
+                    </li>
+                    <li>Copy a hex color code by clicking on a box</li>
+                    <li>Press "R" key to reset all color locks</li>
+                    <li>Press "L" key to disable/enable the darkmode</li>
+                    <li>Use the below input field to set the size of your color palette</li>
+                    <li>Press ESCAPE to show this popup</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Configuration</h2>
+                <label for="numberOfCheckboxes">Number of displayed checkboxes</label>
+                <input class="numberOfCheckboxes" type="number" name="numberOfCheckboxes" id="js-number-of-checkboxes" min="1">
+
+            </section>
+
+            <section>
+                After reading this, press <strong>Escape</strong> to close this popup!
+                <small class="developer">Developed by <a href="mailto:jhoffmann91@protonmail.com">J&uuml;rgen
+                        Hoffmann</a></small>
+            </section>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
