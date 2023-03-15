@@ -139,4 +139,8 @@ const initNumberOfBoxesListener = () => {
   initInteractiveKeyEvents();
   initPopup();
   initDarkMode();
+
+  document.querySelector('#js-mobile-spin').addEventListener('click', () => {
+    spinColorWheel();
+  });
 })();

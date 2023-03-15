@@ -8,7 +8,7 @@ body {
 }
 
 body.dark-mode {
-    color: #eee;
+  color: #eee;
 }
 
 .page {
@@ -30,11 +30,11 @@ body.dark-mode {
 }
 
 .box {
-  border: 3px solid #333;
   display: grid;
   place-items: center;
   font-weight: bold;
   font-size: 3rem;
+  border: 3px solid transparent;
 }
 
 .box--keep {
@@ -68,7 +68,7 @@ body.dark-mode {
 }
 
 .popup-content section + section {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 .dark-mode .popup-content {
@@ -77,8 +77,8 @@ body.dark-mode {
 }
 
 .numberOfBoxes {
-    width: 50px;
-    padding: 5px;
+  width: 50px;
+  padding: 5px;
 }
 
 .dark-mode a {
@@ -101,11 +101,35 @@ body.dark-mode {
   text-align: right;
 }
 
+.mobile {
+  display: none;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 108px);
+    margin: 1rem;
+    cursor: pointer;
+  }
+
+  .mobile-spin {
+    width: 200px;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: #fff;
+    font-weight: bold;
   }
 }
