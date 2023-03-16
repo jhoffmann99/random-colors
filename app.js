@@ -101,8 +101,32 @@ const initInteractiveKeyEvents = () => {
   });
 };
 
+const dragstart_handler = (ev) => {
+  ev.dataTransfer.setData("text/plain", ev.target.id);
+  ev.dataTransfer.dropEffect = 'move';
+}
+
+const dragover_handler = (ev) => {
+  ev.preventDefault();
+  ev.dataTransfer.dropEffect = "move";
+}
+
+const drop_handler = (ev) => {
+  ev.preventDefault();
+  // Get the id of the target and add the moved element to the target's DOM
+  const data = ev.dataTransfer.getData("text/plain");
+  const droppedElement = document.getElementById(data);
+  const boxes = document.querySelectorAll('.box');
+  const newIndex = Array.from(boxes).indexOf(ev.target);
+  
+  document.querySelector('.page').insertBefore(droppedElement, boxes[newIndex]);
+
+}
+
 const initBoxes = () => {
   let page = document.querySelector('.page');
+  page.addEventListener('drop', drop_handler);
+  page.addEventListener('dragover', dragover_handler);
 
   // resets boxes
   page.innerHTML = '';
@@ -116,6 +140,9 @@ const initBoxes = () => {
   [...Array(numberOfBoxes)].map(() => {
     const box = document.createElement('div');
     box.classList.add('box');
+    box.id = 'box-' + randomInteger(1000, 9999);
+    box.setAttribute('draggable', true);
+    box.addEventListener('dragstart', dragstart_handler);
     page.appendChild(box);
   });
 
